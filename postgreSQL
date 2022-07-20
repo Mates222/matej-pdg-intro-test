@@ -1,0 +1,8 @@
+select 
+ case 
+    when x%3 = 0 and x%5 != 0 then 'Fizz' --if divisible by 3 and not by 5, return Fizz
+    when x%5 = 0 and x%3 != 0 then 'Buzz' --if divisible by 5 and not by 3, return Buzz
+    when x%3 = 0 and x%5 = 0 then 'FizzBuzz' --if divisible both by 5 and 3, return FizzBuzz
+    else x::text --else return the number from the original series (column has to be typed as text due to the text cases)
+ end FizzBuzz
+from generate_series(1,100) x --query which generates a one column table of 100 rows with values from 1 to 100
