@@ -1,23 +1,25 @@
-const arr = []; //we define an empty array
+function range(start, end) { //here we define a function that creates a sequence between start and end
+  return Array(end - start + 1).fill().map((_, idx) => start + idx)
+}
 
-for (let x = 1; x <= 100; x++) //here we fill the array by a sequence of numbers from 1 to 100 in a for cycle
-    {
-     arr.push(x)
-    };
+var ourarray = range(1,100)
 
-arr.forEach((e, i) => { //in another for cycle we run through all the array elements (e) on the position defined by index (i)
+function FizzBuzz(ar) { //here we define a function that overwrites the numbers with Fizzes and Buzzes
+  return ar.forEach((e, i) => { //in a for cycle we run through all the array elements (e) on the position defined by index (i)
   if (e % 3 === 0 && e % 5 !== 0)
         {
-         arr[i] = 'Fizz'
+         ar[i] = 'Fizz'
         } //if divisible by 3 and not by 5, overwrite with Fizz
   else if (e % 3 !== 0 && e % 5 === 0)
         {
-         arr[i] = 'Buzz'
-        } //if divisible by 5 and not by 3, overwrite with Buzz
+         ar[i] = 'Buzz'
+        } //if divisible by 3 and not by 5, overwrite with Buzz
   else if (e % 3 === 0 && e % 5 === 0)
         {
-         arr[i] = 'FizzBuzz'
+         ar[i] = 'FizzBuzz'
         } //if divisible both by 3 and 5, return FizzBuzz
-});
+})
+}
 
-console.log(arr) //returns the array when testing in console
+FizzBuzz(ourarray)
+console.log(ourarray) //returns the array when testing in console
