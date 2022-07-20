@@ -1,0 +1,16 @@
+with seqtab as
+(
+    select 1 x
+    union all
+    select x + 1
+    from seqtab
+    where x < 100 --this select in a with clause creates a one column table with numbers from 1 to 100 in the rows
+)
+select 
+ case
+    when x%3 = 0 and x%5 != 0 then 'Fizz' --if divisible by 3 and not by 5, return Fizz
+    when x%5 = 0 and x%3 != 0 then 'Buzz' --if divisible by 5 and not by 3, return Buzz
+    when x%3 = 0 and x%5 = 0 then 'FizzBuzz' --if divisible both by 5 and 3, return FizzBuzz
+    else x
+ end FizzBuzz --from the with clause we select cases divisible by 3 and 5 and alter the result
+from seqtab
