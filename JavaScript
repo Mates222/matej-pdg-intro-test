@@ -13,7 +13,7 @@ arr.forEach((e, i) => { //in another for cycle we run through all the array elem
   else if (e % 3 !== 0 && e % 5 === 0)
         {
          arr[i] = 'Buzz'
-        } //if divisible by 3 and not by 5, overwrite with Buzz
+        } //if divisible by 5 and not by 3, overwrite with Buzz
   else if (e % 3 === 0 && e % 5 === 0)
         {
          arr[i] = 'FizzBuzz'
